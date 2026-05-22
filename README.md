@@ -1,4 +1,4 @@
-# clrmappy — Unsupervised Coloring of 2D/3D Embeddings of Multi-Dimensional Data
+# clrmappy — Unsupervised Coloring of 2D/3D Embeddings of High-Dimensional Data
 
 Python package and interactive streamlit app for **unsupervised coloring** of 2D / 3D embeddings (UMAP, PCA, t-SNE, …). It includes scanpy/anndata based preprocessing and umap-computing functions for a single cell pipeline, but 2D/3D arrays can be used directly as well.
 
