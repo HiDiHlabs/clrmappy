@@ -313,30 +313,6 @@ folder's `setup.json` — you don't need to touch it manually.
 All the interactive controls live in the **left sidebar** so you can adjust
 them without scrolling away from the plots:
 
-```
-┌── View controls ────────────────────────────────────────────┐
-│  Plots to display [multi-select]    🖥️ Fit on screen        │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Coloring controls ────────────────────────────────────────┐
-│  Colorspace: [OKhsl] [RGB (naive)] [CIELab (U-CIE)]         │
-│  Conditional params per mode (see below)                    │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Single-combo picker ──────────────────────────────────────┐
-│  min_dist [slider]   n_neighbors [slider]   metric [radio]  │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Plot panels (up to 2×2, configurable) ────────────────────┐
-│  UMAP colored        │  Spatial colored                     │
-│  UMAP cell types     │  Spatial cell types                  │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Interactive 3D + fit embedding ───────────────────────────┐
-│  3D Plotly (rotatable)  │  Fit embedding (OKhsl / RGB)      │
-└──────────────────────────────────────────────────────────────┘
-```
-
 ### Per-mode parameters
 
 **OKhsl**
