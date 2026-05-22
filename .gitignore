@@ -1,0 +1,57 @@
+# ── Python bytecode ──────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── Build artefacts (pip / setuptools / build) ───────────────────────────────
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+.installed.cfg
+pip-wheel-metadata/
+
+# ── Virtual envs ─────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ── Editor / OS junk ─────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Tool-specific local config (machine-bound, don't commit) ────────────────
+# Claude Code agent settings
+.claude/
+# local conda config (channels, proxy, …)
+.condarc
+# R history files
+.Rhistory
+.Rapp.history
+
+# ── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoint
+
+# ── App + experiment artefacts (LARGE — keep out of git) ─────────────────────
+# raw input data — point users at public sources via the README instead.
+ST-Data/
+# computed UMAPs + saved colorings — regenerable from input + sidebar params.
+Results/
+# Streamlit batch log / status
+batch.log
+status.json
+
+# ── Misc backups / scratch ───────────────────────────────────────────────────
+*.bak
+*.tmp
+*.log
+scratch/

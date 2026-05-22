@@ -1,0 +1,59 @@
+# Reproducible dev environment for clrmappy.
+#
+# This is for the developer (running the Streamlit app, notebooks, dev work).
+# End-users who only need the `import clrmappy` library can install via pip
+# from the pyproject.toml (`pip install clrmappy[app]` for the Streamlit app).
+#
+# Create / update:
+#   conda env create -f clrmapenv.yaml      # first time
+#   conda env update -f clrmapenv.yaml      # subsequent changes
+#   conda activate clrmapenv
+#
+# CIELab support (cm.emb_to_cielab) additionally needs R + the `ucie` R
+# package + XQuartz on macOS. Skip the conda install of R if you don't need
+# CIELab — the OKhsl / RGB modes work without R.
+
+name: clrmapenv
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.10,<3.14
+
+  # ── numeric / ML stack ────────────────────────────────────────────────────
+  - numpy>=1.23
+  - pandas>=1.5
+  - scipy>=1.10
+  - scikit-learn>=1.2
+
+  # ── plotting ──────────────────────────────────────────────────────────────
+  - matplotlib>=3.6
+  - plotly>=5.10
+  - colorcet>=3.0
+
+  # ── single-cell / spatial-omics ───────────────────────────────────────────
+  - scanpy>=1.10
+  - anndata>=0.10
+  - umap-learn>=0.5
+
+  # ── streamlit app ─────────────────────────────────────────────────────────
+  - streamlit>=1.28
+
+  # ── notebooks / dev ───────────────────────────────────────────────────────
+  - ipykernel
+  - jupyter
+  - nbformat
+
+  # ── CIELab via R (optional) ───────────────────────────────────────────────
+  # Uncomment + on macOS also install XQuartz beforehand
+  # (`brew install --cask xquartz`). The R `ucie` package is installed
+  # lazily on first call to `cm.emb_to_cielab` via
+  # `remotes::install_github('mikelkou/ucie')`.
+  # - r-base>=4.3
+  # - r-remotes
+
+  # ── pip-installed extras ──────────────────────────────────────────────────
+  - pip
+  - pip:
+    # install clrmappy itself in editable mode from the repo root
+    - -e .

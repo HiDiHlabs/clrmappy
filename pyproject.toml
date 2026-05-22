@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clrmappy"
+version = "0.1.0"
+description = "Unsupervised coloring of multi-dimensional data (UMAP / PCA / t-SNE / spatial-omics …)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Manuel Santos Gelke" },
+]
+maintainers = [
+    { name = "Manuel Santos Gelke" },
+]
+keywords = [
+    "single-cell",
+    "spatial-transcriptomics",
+    "umap",
+    "color",
+    "okhsl",
+    "cielab",
+    "visualization",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Operating System :: OS Independent",
+]
+
+# Core runtime dependencies — what's needed to `import clrmappy` and use
+# the 3 main coloring functions + plot helpers in a notebook.
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scipy>=1.10",
+    "scikit-learn>=1.2",
+    "matplotlib>=3.6",
+    "plotly>=5.10",
+    "colorcet>=3.0",
+    "scanpy>=1.10",     # preprocess + compute_umaps
+    "anndata>=0.10",
+]
+
+[project.optional-dependencies]
+# Streamlit explorer app (`app.py`). Install with: `pip install clrmappy[app]`
+app = [
+    "streamlit>=1.28",
+]
+# Local dev (Jupyter, tests). Install with: `pip install clrmappy[dev]`
+dev = [
+    "ipykernel",
+    "jupyter",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/HiDiHlabs/clrmappy"
+Repository = "https://github.com/HiDiHlabs/clrmappy"
+Issues = "https://github.com/HiDiHlabs/clrmappy/issues"
+
+# ── Package layout ────────────────────────────────────────────────────────────
+# The repo root *is* the package folder (it contains __init__.py + the
+# clrmap_main / _okhsl_utils / _plotting / single_cell_helper_functions
+# modules). setuptools uses the "flat layout": tell it which dirs are
+# packages and which top-level modules to include.
+[tool.setuptools]
+# Single package: the folder containing __init__.py. Adjust if you later
+# move things into a subfolder.
+packages = ["clrmappy"]
+# Tell setuptools where to find the package files — the parent dir of this
+# pyproject.toml IS the package folder, so we map "clrmappy" → "." …
+[tool.setuptools.package-dir]
+clrmappy = "."
+
+# Files to include in the wheel beyond .py source.
+[tool.setuptools.package-data]
+clrmappy = ["*.md", "LICENSE"]
+
+# Exclude app + batch + compute_core scripts from the installable package —
+# they are entry points / dev tools, not part of the library API.
+# Users who want to run the app should clone the repo + use the
+# environment.yml.
