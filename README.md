@@ -9,8 +9,6 @@ The package currently includes three color spaces:
 - **CIELab** via the R package (complex shaped sRGB gamut)
   [`ucie`](https://github.com/mikelkou/ucie) (Kourmpetis et al.)
 
-![clrmappy — main view](assets/screenshot-main.png)
-
 ---
 
 ## Installation
@@ -251,7 +249,7 @@ clrmappy/
 ---
 
 ## Running the Streamlit app
-
+![clrmappy — main view](assets/screenshot-main.png)
 ```bash
 conda activate clrmapenv
 # From the repository root (the folder containing pyproject.toml):
