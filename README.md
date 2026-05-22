@@ -7,7 +7,7 @@ The package currently includes three color spaces:
 - **OKhsl** (based on Björn Ottosson's perceptually-uniform OKlab, cylindrical color space) — 2D- or 3D-based
 - **RGB naive** — simple RGB coloring (cubic color space)
 - **CIELab** via the R package (complex shaped sRGB gamut)
-  [`ucie`](https://github.com/mikelkou/ucie) (Kourmpetis et al.)
+  [`ucie`](https://github.com/mikelkou/ucie) (Koutrouli et al.)
 
 ---
 
