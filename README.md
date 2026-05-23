@@ -443,7 +443,7 @@ Released under the [MIT License](LICENSE).
 
 - **OKhsl** color space: Björn Ottosson —
   [bottosson.github.io/posts/colorpicker](https://bottosson.github.io/posts/colorpicker/)
-- **U-CIE / CIELab gamut fitting**: Kourmpetis et al. —
+- **U-CIE / CIELab gamut fitting**: Koutrouli et al. —
   [mikelkou/ucie](https://github.com/mikelkou/ucie)
 - **UMAP**: McInnes et al., via [scanpy](https://scanpy.readthedocs.io)
   / [umap-learn](https://umap-learn.readthedocs.io)
