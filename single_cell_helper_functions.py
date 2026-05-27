@@ -114,9 +114,11 @@ def compute_umaps(adata, n_neighbors_2d=15, n_neighbors_3d=15, min_dist_2d=0.2, 
     umap_3d = adata.obsm['X_umap'].copy()
     adata.obsm['X_umap_3d'] = umap_3d.copy()
 
-    # 2D UMAP: standard parameters for visualization
-    sc.pp.neighbors(adata, n_neighbors=n_neighbors_2d,
-                    n_pcs=n_pcs, metric=metric_2d)
+    if (n_neighbors_2d != n_neighbors_3d or metric_2d != metric_3d):
+        # 2D UMAP neighbors
+        sc.pp.neighbors(adata, n_neighbors=n_neighbors_2d,
+                        n_pcs=n_pcs, metric=metric_2d)
+
     sc.tl.umap(adata, n_components=2, min_dist=min_dist_2d, random_state=10)
 
     umap_2d = adata.obsm['X_umap'].copy()

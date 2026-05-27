@@ -13,6 +13,7 @@ from ._okhsl_utils import (
     _saturation_enhancement,
     _emb_to_OKhsl,
     _okhsl_to_srgb_array,
+    _srgb_transfer,
 )
 
 
