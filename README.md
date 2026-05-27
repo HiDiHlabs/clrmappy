@@ -1,4 +1,4 @@
-# clrmappy — Unsupervised Coloring for Spatial Transcriptomics
+# clrmappy — Unsupervised Coloring of 2D/3D Embeddings of High-Dimensional Data
 
 Python package and interactive streamlit app for **unsupervised coloring** of 2D / 3D embeddings (UMAP, PCA, t-SNE, …). It includes scanpy/anndata based preprocessing and umap-computing functions for a single cell pipeline, but 2D/3D arrays can be used directly as well.
 
@@ -7,9 +7,7 @@ The package currently includes three color spaces:
 - **OKhsl** (based on Björn Ottosson's perceptually-uniform OKlab, cylindrical color space) — 2D- or 3D-based
 - **RGB naive** — simple RGB coloring (cubic color space)
 - **CIELab** via the R package (complex shaped sRGB gamut)
-  [`ucie`](https://github.com/mikelkou/ucie) (Kourmpetis et al.)
-
-![clrmappy — main view](assets/screenshot-main.png)
+  [`ucie`](https://github.com/mikelkou/ucie) (Koutrouli et al.)
 
 ---
 
@@ -251,7 +249,7 @@ clrmappy/
 ---
 
 ## Running the Streamlit app
-
+![clrmappy — main view](assets/screenshot-main.png)
 ```bash
 conda activate clrmapenv
 # From the repository root (the folder containing pyproject.toml):
@@ -314,30 +312,6 @@ folder's `setup.json` — you don't need to touch it manually.
 
 All the interactive controls live in the **left sidebar** so you can adjust
 them without scrolling away from the plots:
-
-```
-┌── View controls ────────────────────────────────────────────┐
-│  Plots to display [multi-select]    🖥️ Fit on screen        │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Coloring controls ────────────────────────────────────────┐
-│  Colorspace: [OKhsl] [RGB (naive)] [CIELab (U-CIE)]         │
-│  Conditional params per mode (see below)                    │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Single-combo picker ──────────────────────────────────────┐
-│  min_dist [slider]   n_neighbors [slider]   metric [radio]  │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Plot panels (up to 2×2, configurable) ────────────────────┐
-│  UMAP colored        │  Spatial colored                     │
-│  UMAP cell types     │  Spatial cell types                  │
-└──────────────────────────────────────────────────────────────┘
-
-┌── Interactive 3D + fit embedding ───────────────────────────┐
-│  3D Plotly (rotatable)  │  Fit embedding (OKhsl / RGB)      │
-└──────────────────────────────────────────────────────────────┘
-```
 
 ### Per-mode parameters
 
@@ -469,7 +443,7 @@ Released under the [MIT License](LICENSE).
 
 - **OKhsl** color space: Björn Ottosson —
   [bottosson.github.io/posts/colorpicker](https://bottosson.github.io/posts/colorpicker/)
-- **U-CIE / CIELab gamut fitting**: Kourmpetis et al. —
+- **U-CIE / CIELab gamut fitting**: Koutrouli et al. —
   [mikelkou/ucie](https://github.com/mikelkou/ucie)
 - **UMAP**: McInnes et al., via [scanpy](https://scanpy.readthedocs.io)
   / [umap-learn](https://umap-learn.readthedocs.io)
